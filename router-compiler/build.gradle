@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(path: ':router-annotation')
+    implementation rootProject.ext.dependencies["autoservice"]
+    annotationProcessor rootProject.ext.dependencies["autoservice"]
+    implementation rootProject.ext.dependencies["javapoet"]
+
+
+}
+sourceCompatibility = rootProject.ext.android.sourceCompatibility
+targetCompatibility = rootProject.ext.android.targetCompatibility
